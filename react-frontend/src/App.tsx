@@ -9,6 +9,7 @@ import Village from './pages/Village';
 import ProtectedRoutes from './components/Routes/ProtectedRoute';
 import Settings from './pages/Settings';
 import Map from './pages/Map';
+import Battle from './pages/Battle';
 function App() {
 
   return (
@@ -55,7 +56,12 @@ function App() {
             </MainLayout>
             }
           />
-
+          <Route path="/battle" element={
+            <MainLayout>
+              <Battle />
+            </MainLayout>
+            }
+          />
           <Route path="/settings" element={
             <MainLayout>
               <Settings />
