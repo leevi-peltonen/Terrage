@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Drawing;
-using TerraVillageAPI.Models;
-using TerraVillageAPI.Models.DTO;
+using TerrageApi.Models;
+using TerrageApi.Models.DTO;
 
-namespace TerraVillageAPI.Services
+namespace TerrageApi.Services
 {
     public class UserService : IUserService
     {
 
-        private readonly TerraVillageDBContext _context;
+        private readonly TerrageApiDBContext _context;
 
-        public UserService(TerraVillageDBContext context)
+        public UserService(TerrageApiDBContext context)
         {
             _context = context;
         }

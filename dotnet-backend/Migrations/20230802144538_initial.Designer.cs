@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TerraVillageAPI.Models;
+using TerrageApi.Models;
 
 #nullable disable
 
-namespace TerraVillageAPI.Migrations
+namespace TerrageApi.Migrations
 {
-    [DbContext(typeof(TerraVillageDBContext))]
+    [DbContext(typeof(TerrageApiDBContext))]
     [Migration("20230802144538_initial")]
     partial class initial
     {
@@ -100,7 +100,7 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("InventoryItems", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Achievement", b =>
+            modelBuilder.Entity("TerrageApi.Models.Achievement", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -231,7 +231,7 @@ namespace TerraVillageAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Building", b =>
+            modelBuilder.Entity("TerrageApi.Models.Building", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -316,7 +316,7 @@ namespace TerraVillageAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Clan", b =>
+            modelBuilder.Entity("TerrageApi.Models.Clan", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -359,7 +359,7 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("Clans", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.DamageEffect", b =>
+            modelBuilder.Entity("TerrageApi.Models.DamageEffect", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -388,7 +388,7 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("DamageEffects", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Enemy", b =>
+            modelBuilder.Entity("TerrageApi.Models.Enemy", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -458,7 +458,7 @@ namespace TerraVillageAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Inventory", b =>
+            modelBuilder.Entity("TerrageApi.Models.Inventory", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -478,7 +478,7 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("Inventories", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Item", b =>
+            modelBuilder.Entity("TerrageApi.Models.Item", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -510,7 +510,7 @@ namespace TerraVillageAPI.Migrations
                     b.UseTptMappingStrategy();
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Settings", b =>
+            modelBuilder.Entity("TerrageApi.Models.Settings", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -536,7 +536,7 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("Settings", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.User", b =>
+            modelBuilder.Entity("TerrageApi.Models.User", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -571,7 +571,7 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Village", b =>
+            modelBuilder.Entity("TerrageApi.Models.Village", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -607,9 +607,9 @@ namespace TerraVillageAPI.Migrations
                     b.ToTable("UserFriends", (string)null);
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Armor", b =>
+            modelBuilder.Entity("TerrageApi.Models.Armor", b =>
                 {
-                    b.HasBaseType("TerraVillageAPI.Models.Item");
+                    b.HasBaseType("TerrageApi.Models.Item");
 
                     b.Property<int>("ArmorSlot")
                         .HasColumnType("int");
@@ -685,9 +685,9 @@ namespace TerraVillageAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Consumable", b =>
+            modelBuilder.Entity("TerrageApi.Models.Consumable", b =>
                 {
-                    b.HasBaseType("TerraVillageAPI.Models.Item");
+                    b.HasBaseType("TerrageApi.Models.Item");
 
                     b.Property<int?>("EffectID")
                         .HasColumnType("int");
@@ -738,9 +738,9 @@ namespace TerraVillageAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Weapon", b =>
+            modelBuilder.Entity("TerrageApi.Models.Weapon", b =>
                 {
-                    b.HasBaseType("TerraVillageAPI.Models.Item");
+                    b.HasBaseType("TerrageApi.Models.Item");
 
                     b.Property<int>("ActionCost")
                         .HasColumnType("int");
@@ -855,13 +855,13 @@ namespace TerraVillageAPI.Migrations
 
             modelBuilder.Entity("AchievementUser", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.Achievement", null)
+                    b.HasOne("TerrageApi.Models.Achievement", null)
                         .WithMany()
                         .HasForeignKey("AchievementsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TerraVillageAPI.Models.User", null)
+                    b.HasOne("TerrageApi.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UsersID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -870,13 +870,13 @@ namespace TerraVillageAPI.Migrations
 
             modelBuilder.Entity("BuildingVillage", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.Building", null)
+                    b.HasOne("TerrageApi.Models.Building", null)
                         .WithMany()
                         .HasForeignKey("BuildingsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TerraVillageAPI.Models.Village", null)
+                    b.HasOne("TerrageApi.Models.Village", null)
                         .WithMany()
                         .HasForeignKey("VillagesID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -885,13 +885,13 @@ namespace TerraVillageAPI.Migrations
 
             modelBuilder.Entity("DamageEffectEnemy", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.DamageEffect", null)
+                    b.HasOne("TerrageApi.Models.DamageEffect", null)
                         .WithMany()
                         .HasForeignKey("DamageEffectsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TerraVillageAPI.Models.Enemy", null)
+                    b.HasOne("TerrageApi.Models.Enemy", null)
                         .WithMany()
                         .HasForeignKey("EnemiesID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -900,13 +900,13 @@ namespace TerraVillageAPI.Migrations
 
             modelBuilder.Entity("EnemyItem", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.Item", null)
+                    b.HasOne("TerrageApi.Models.Item", null)
                         .WithMany()
                         .HasForeignKey("DropTableID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TerraVillageAPI.Models.Enemy", null)
+                    b.HasOne("TerrageApi.Models.Enemy", null)
                         .WithMany()
                         .HasForeignKey("EnemyDropTablesID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -915,22 +915,22 @@ namespace TerraVillageAPI.Migrations
 
             modelBuilder.Entity("InventoryItem", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.Item", null)
+                    b.HasOne("TerrageApi.Models.Item", null)
                         .WithMany()
                         .HasForeignKey("ItemsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TerraVillageAPI.Models.Inventory", null)
+                    b.HasOne("TerrageApi.Models.Inventory", null)
                         .WithMany()
                         .HasForeignKey("UserInventoriesID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Clan", b =>
+            modelBuilder.Entity("TerrageApi.Models.Clan", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.User", "Owner")
+                    b.HasOne("TerrageApi.Models.User", "Owner")
                         .WithMany()
                         .HasForeignKey("OwnerID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -939,42 +939,42 @@ namespace TerraVillageAPI.Migrations
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Inventory", b =>
+            modelBuilder.Entity("TerrageApi.Models.Inventory", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.User", "User")
+                    b.HasOne("TerrageApi.Models.User", "User")
                         .WithOne("Inventory")
-                        .HasForeignKey("TerraVillageAPI.Models.Inventory", "ID")
+                        .HasForeignKey("TerrageApi.Models.Inventory", "ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Settings", b =>
+            modelBuilder.Entity("TerrageApi.Models.Settings", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.User", "User")
+                    b.HasOne("TerrageApi.Models.User", "User")
                         .WithOne("Settings")
-                        .HasForeignKey("TerraVillageAPI.Models.Settings", "ID")
+                        .HasForeignKey("TerrageApi.Models.Settings", "ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.User", b =>
+            modelBuilder.Entity("TerrageApi.Models.User", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.Clan", "Clan")
+                    b.HasOne("TerrageApi.Models.Clan", "Clan")
                         .WithMany("Members")
                         .HasForeignKey("ClanID");
 
                     b.Navigation("Clan");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Village", b =>
+            modelBuilder.Entity("TerrageApi.Models.Village", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.User", "Owner")
+                    b.HasOne("TerrageApi.Models.User", "Owner")
                         .WithOne("Village")
-                        .HasForeignKey("TerraVillageAPI.Models.Village", "ID")
+                        .HasForeignKey("TerrageApi.Models.Village", "ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -983,64 +983,64 @@ namespace TerraVillageAPI.Migrations
 
             modelBuilder.Entity("UserUser", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.User", null)
+                    b.HasOne("TerrageApi.Models.User", null)
                         .WithMany()
                         .HasForeignKey("FriendsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TerraVillageAPI.Models.User", null)
+                    b.HasOne("TerrageApi.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Armor", b =>
+            modelBuilder.Entity("TerrageApi.Models.Armor", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.Item", null)
+                    b.HasOne("TerrageApi.Models.Item", null)
                         .WithOne()
-                        .HasForeignKey("TerraVillageAPI.Models.Armor", "ID")
+                        .HasForeignKey("TerrageApi.Models.Armor", "ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Consumable", b =>
+            modelBuilder.Entity("TerrageApi.Models.Consumable", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.DamageEffect", "Effect")
+                    b.HasOne("TerrageApi.Models.DamageEffect", "Effect")
                         .WithMany()
                         .HasForeignKey("EffectID");
 
-                    b.HasOne("TerraVillageAPI.Models.Item", null)
+                    b.HasOne("TerrageApi.Models.Item", null)
                         .WithOne()
-                        .HasForeignKey("TerraVillageAPI.Models.Consumable", "ID")
+                        .HasForeignKey("TerrageApi.Models.Consumable", "ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Effect");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Weapon", b =>
+            modelBuilder.Entity("TerrageApi.Models.Weapon", b =>
                 {
-                    b.HasOne("TerraVillageAPI.Models.DamageEffect", "DamageEffect")
+                    b.HasOne("TerrageApi.Models.DamageEffect", "DamageEffect")
                         .WithMany()
                         .HasForeignKey("DamageEffectID");
 
-                    b.HasOne("TerraVillageAPI.Models.Item", null)
+                    b.HasOne("TerrageApi.Models.Item", null)
                         .WithOne()
-                        .HasForeignKey("TerraVillageAPI.Models.Weapon", "ID")
+                        .HasForeignKey("TerrageApi.Models.Weapon", "ID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("DamageEffect");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.Clan", b =>
+            modelBuilder.Entity("TerrageApi.Models.Clan", b =>
                 {
                     b.Navigation("Members");
                 });
 
-            modelBuilder.Entity("TerraVillageAPI.Models.User", b =>
+            modelBuilder.Entity("TerrageApi.Models.User", b =>
                 {
                     b.Navigation("Inventory")
                         .IsRequired();

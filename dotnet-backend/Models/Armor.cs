@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace TerraVillageAPI.Models
+namespace TerrageApi.Models
 {
     public class Armor : Item
     {

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "TerraVilageAPI": {
+    "TerrageApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

@@ -1,6 +1,6 @@
-﻿using TerraVillageAPI.Models;
+﻿using TerrageApi.Models;
 
-namespace TerraVillageAPI.Utils
+namespace TerrageApi.Utils
 {
     public static class SeedHelper
     {

@@ -4,11 +4,11 @@ using Newtonsoft.Json;
 using System.Security.Cryptography.Xml;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using TerraVillageAPI.Utils;
+using TerrageApi.Utils;
 
-namespace TerraVillageAPI.Models
+namespace TerrageApi.Models
 {
-    public class TerraVillageDBContext : DbContext
+    public class TerrageApiDBContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Achievement> Achievements { get; set; }
@@ -24,7 +24,7 @@ namespace TerraVillageAPI.Models
         public DbSet<Building> Buildings { get; set; }
         public DbSet<Consumable> Consumables { get; set; }
 
-        public TerraVillageDBContext(DbContextOptions<TerraVillageDBContext> options) : base(options) { }
+        public TerrageApiDBContext(DbContextOptions<TerrageApiDBContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

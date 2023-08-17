@@ -1,7 +1,7 @@
-﻿using TerraVillageAPI.Models;
-using TerraVillageAPI.Models.DTO;
+﻿using TerrageApi.Models;
+using TerrageApi.Models.DTO;
 
-namespace TerraVillageAPI.Services
+namespace TerrageApi.Services
 {
     public interface IUserService
     {
