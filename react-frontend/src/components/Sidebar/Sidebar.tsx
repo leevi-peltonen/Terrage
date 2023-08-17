@@ -1,6 +1,6 @@
 import React from 'react'
 import { Drawer, List, ListItem, ListItemText, ListItemButton, ListItemIcon, Divider } from '@mui/material'
-import { SidebarMenuOptions } from '../../settings/TemplateVariables'
+import { SidebarMenuAdditionalOptions, SidebarMenuOptions } from '../../settings/TemplateVariables'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -33,6 +33,16 @@ const Sidebar = ({ open }: SidebarProps) => {
                         <ListItem key={i}>
                             <ListItemButton onClick={() => navigate(option.path)}>
                                 <ListItemText primary={option.name}  />
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
+                <Divider />
+                {SidebarMenuAdditionalOptions.map((option, i) => {
+                    return (
+                        <ListItem key={i}>
+                            <ListItemButton onClick={() => navigate(option.path)}>
+                                <ListItemText primary={option.name} />
                             </ListItemButton>
                         </ListItem>
                     )

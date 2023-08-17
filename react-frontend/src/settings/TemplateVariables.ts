@@ -15,7 +15,7 @@ export const HeaderText = "TERRAGE"
 /**
  * Header Menu Options
  * name: string
- * ...
+ * path: string
  */
 export const HeaderMenuOptions = (
     [
@@ -52,6 +52,19 @@ export const SidebarMenuOptions = (
         {
             name: "Friends / Clan",
             path: "/social"
+        }
+    ]
+)
+
+export const SidebarMenuAdditionalOptions = (
+    [
+        {
+            name: "Profile",
+            path: "/profile"
+        },
+        {
+            name: "Settings",
+            path: "/settings"
         }
     ]
 )

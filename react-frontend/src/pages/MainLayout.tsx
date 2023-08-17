@@ -38,7 +38,6 @@ const MainLayout = ({ children }: MainLayoutProps) => {
             <Container maxWidth="xl">
             <Header 
                 header={HeaderText}
-                menuOptions={HeaderMenuOptions}
             />
                 <Grid
                     container
