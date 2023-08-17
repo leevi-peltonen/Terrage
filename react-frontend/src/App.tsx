@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import Village from './pages/Village';
 import ProtectedRoutes from './components/Routes/ProtectedRoute';
+import Settings from './pages/Settings';
 function App() {
 
   return (
@@ -46,6 +47,12 @@ function App() {
               <Village />
             </MainLayout>
           } />
+
+          <Route path="/settings" element={
+            <MainLayout>
+              <Settings />
+            </MainLayout>
+          }/>
 
         <Route 
           path="*"

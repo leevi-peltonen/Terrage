@@ -2,7 +2,7 @@ import { CssBaseline, Container, Grid } from '@mui/material';
 import React, { ReactNode, useState, useEffect } from 'react'
 import Header from '../components/Header/Header';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { HeaderMenuOptions, HeaderText, Theme } from '../settings/TemplateVariables';
+import { HeaderMenuOptions, HeaderText } from '../settings/TemplateVariables';
 import Sidebar from '../components/Sidebar/Sidebar';
 import { useSelector } from 'react-redux';
 import { RootState } from '../features/rootReducer';
@@ -13,15 +13,22 @@ interface MainLayoutProps {
 
 const darkTheme = createTheme({
     palette: {
-        mode: Theme
+        mode: 'dark'
     }
 })
 
+const lightTheme = createTheme({
+    palette: {
+        mode: 'light'
+    }
+})
+
+
 const MainLayout = ({ children }: MainLayoutProps) => {
+    const settings = useSelector((state: RootState) => state.settings.value)
+    const user = useSelector((state: RootState) => state.user.value)
 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-
-    const user = useSelector((state: RootState) => state.user.value)
 
     useEffect(() => {
         if(user.id !== 0) {
@@ -33,7 +40,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     }, [user])
 
     return (
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={settings.isDarkTheme ? darkTheme : lightTheme}>
             <CssBaseline />
             <Container maxWidth="xl">
             <Header 

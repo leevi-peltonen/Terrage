@@ -5,7 +5,7 @@
  * Maybe add this to UI for user to change?
  */
 
-export const Theme = 'dark'
+//export const Theme = 'dark'
 
 /**
  * Header text: string
