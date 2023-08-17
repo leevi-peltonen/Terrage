@@ -1,11 +1,3 @@
-/**
- * Theme
- * Accepted values: 'dark', 'light'
- * 
- * Maybe add this to UI for user to change?
- */
-
-//export const Theme = 'dark'
 
 /**
  * Header text: string
@@ -31,6 +23,12 @@ export const HeaderMenuOptions = (
     ]
 )
 
+/**
+ * Sidebar Menu Options
+ * name: string
+ * path: string
+ */
+
 export const SidebarMenuOptions = (
     [
         {
@@ -44,6 +42,10 @@ export const SidebarMenuOptions = (
         {
             name: "World Map",
             path: "/map"
+        },
+        {
+            name: "Battle",
+            path: "/battle"
         },
         {
             name: "Quests",
