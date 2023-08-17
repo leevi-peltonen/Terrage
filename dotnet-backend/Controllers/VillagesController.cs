@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TerraVillageAPI.Models;
+using TerrageApi.Models;
 
-namespace TerraVillageAPI.Controllers
+namespace TerrageApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class VillagesController : ControllerBase
     {
-        private readonly TerraVillageDBContext _context;
+        private readonly TerrageApiDBContext _context;
 
-        public VillagesController(TerraVillageDBContext context)
+        public VillagesController(TerrageApiDBContext context)
         {
             _context = context;
         }
@@ -87,7 +87,7 @@ namespace TerraVillageAPI.Controllers
         {
           if (_context.Villages == null)
           {
-              return Problem("Entity set 'TerraVillageDBContext.Villages'  is null.");
+              return Problem("Entity set 'TerrageApiDBContext.Villages'  is null.");
           }
             _context.Villages.Add(village);
             await _context.SaveChangesAsync();

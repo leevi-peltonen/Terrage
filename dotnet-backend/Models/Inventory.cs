@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TerraVillageAPI.Models
+namespace TerrageApi.Models
 {
     public class Inventory
     {

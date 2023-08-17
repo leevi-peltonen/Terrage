@@ -1,4 +1,4 @@
-﻿namespace TerraVillageAPI.Models
+﻿namespace TerrageApi.Models
 {
     public class Quest
     {

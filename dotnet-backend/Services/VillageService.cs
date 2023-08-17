@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TerraVillageAPI.Models;
+using TerrageApi.Models;
 
-namespace TerraVillageAPI.Services
+namespace TerrageApi.Services
 {
     public class VillageService : IVillageService
     {
-        private readonly TerraVillageDBContext _context;
+        private readonly TerrageApiDBContext _context;
 
-        public VillageService(TerraVillageDBContext context)
+        public VillageService(TerrageApiDBContext context)
         {
             _context = context;
         }

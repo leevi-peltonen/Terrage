@@ -1,6 +1,6 @@
-﻿using TerraVillageAPI.Models;
+﻿using TerrageApi.Models;
 
-namespace TerraVillageAPI.Services
+namespace TerrageApi.Services
 {
     public interface IVillageService
     {

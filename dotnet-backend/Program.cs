@@ -2,9 +2,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
-using TerraVillageAPI.Models;
-using TerraVillageAPI.Services;
-using TerraVillageAPI.Utils;
+using TerrageApi.Models;
+using TerrageApi.Services;
+using TerrageApi.Utils;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +26,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddDbContext<TerraVillageDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<TerrageApiDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
 
@@ -39,7 +39,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var context = services.GetRequiredService<TerraVillageDBContext>();
+    var context = services.GetRequiredService<TerrageApiDBContext>();
     context.Database.EnsureCreated();
 }
 

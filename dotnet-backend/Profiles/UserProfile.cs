@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using TerraVillageAPI.Models;
-using TerraVillageAPI.Models.DTO;
+using TerrageApi.Models;
+using TerrageApi.Models.DTO;
 
-namespace TerraVillageAPI.Profiles
+namespace TerrageApi.Profiles
 {
     public class UserProfile : Profile
     {

@@ -1,4 +1,4 @@
-﻿namespace TerraVillageAPI.Profiles
+﻿namespace TerrageApi.Profiles
 {
     public class VillageProfile
     {

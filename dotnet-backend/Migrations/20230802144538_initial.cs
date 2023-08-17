@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace TerraVillageAPI.Migrations
+namespace TerrageApi.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration

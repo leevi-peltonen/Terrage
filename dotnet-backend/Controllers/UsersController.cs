@@ -11,12 +11,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using TerraVillageAPI.Models;
-using TerraVillageAPI.Models.DTO;
-using TerraVillageAPI.Services;
-using TerraVillageAPI.Utils;
+using TerrageApi.Models;
+using TerrageApi.Models.DTO;
+using TerrageApi.Services;
+using TerrageApi.Utils;
 
-namespace TerraVillageAPI.Controllers
+namespace TerrageApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

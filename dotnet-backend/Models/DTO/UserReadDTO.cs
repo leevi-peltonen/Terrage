@@ -1,4 +1,4 @@
-﻿namespace TerraVillageAPI.Models.DTO
+﻿namespace TerrageApi.Models.DTO
 {
     public class UserReadDTO
     {

@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace TerraVillageAPI.Utils
+namespace TerrageApi.Utils
 {
     public static class SecretKeyGenerator
     {
