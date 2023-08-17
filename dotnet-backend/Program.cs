@@ -26,7 +26,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddDbContext<TerraVillageDBContext>(options => options.UseSqlServer("server=LEEWARD-PC\\SQLEXPRESS;Database=TerraVillage; Trusted_Connection=True; encrypt=false"));
+builder.Services.AddDbContext<TerraVillageDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
 
