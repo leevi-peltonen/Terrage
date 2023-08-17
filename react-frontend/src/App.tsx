@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Village from './pages/Village';
 import ProtectedRoutes from './components/Routes/ProtectedRoute';
 import Settings from './pages/Settings';
+import Map from './pages/Map';
 function App() {
 
   return (
@@ -47,6 +48,13 @@ function App() {
               <Village />
             </MainLayout>
           } />
+
+          <Route path="/map" element={
+            <MainLayout>
+              <Map />
+            </MainLayout>
+            }
+          />
 
           <Route path="/settings" element={
             <MainLayout>
